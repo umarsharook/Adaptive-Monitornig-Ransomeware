@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Rumor</title>
+
+  <!-- Owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+  <!-- Font Awesome style -->
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,500,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.css" rel="stylesheet" />
+  <!-- Responsive style -->
+  <link href="/static/css/responsive.css" rel="stylesheet" />
+  
+  <style>
+    /* Colorful table style */
+    .table-responsive {
+      margin-top: 30px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    th, td {
+      padding: 15px;
+      border: 1px solid #ddd;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    th {
+      background-color: #ff6f61;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #e0e0e0;
+    }
+
+    tr:hover {
+      background-color: #ffeb3b;
+      cursor: pointer;
+      color: black;
+    }
+
+    td {
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* Add a fancy effect when hovering over the whole table */
+    table th, table td {
+      transition: all 0.3s ease;
+    }
+
+    /* Add some spacing around the table */
+    .container {
+      margin-top: 50px;
+    }
+
+    /* Custom Scrollbar for the Table */
+    .table-responsive::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .table-responsive::-webkit-scrollbar-thumb {
+      background: #ff6f61;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+      <div class="contact_nav_container">
+        <div class="container">
+          <div class="contact_nav">
+            <a href="">
+              <!-- <i class="fa fa-map-marker" aria-hidden="true"></i> -->
+            </a>
+            <a href="">
+              <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+            </a>
+            <a href="">
+              <!-- <i class="fa fa-phone" aria-hidden="true"></i> -->
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <div class="custom_menu-btn">
+            <button onclick="openNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+          </div>
+          <div id="myNav" class="overlay">
+            <div class="menu_btn-style ">
+              <button onclick="closeNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div class="overlay-content">
+              <a href="{{ url_for('load') }}">UPLOAD</a>
+              <a  class="active" href="{{ url_for('viewdata') }}">VIEW DATA</a>
+              <a href="{{ url_for('model') }}">MODEL EVALUATION</a>
+              <a href="{{ url_for('prediction') }}">PREDICTION</a>
+              <a href="{{ url_for('index') }}">LOGOUT</a>
+            </div>
+          </div>
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Adaptive Monitoring for Early Stage Ransomware Detection
+            </span>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <!-- header section ends -->
+
+  </div>
+
+  <!-- Table Section -->
+  <div class="container mt-5">
+    <h2 style="margin-top:-600px; text-align:center; color:#ff6f61; font-family: 'Poppins', sans-serif;">Dataset Overview</h2>
+    <div class="table-responsive">
+      <!-- Inject the table here -->
+      {{ table|safe }}
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/static/js/jquery-3.4.1.min.js"></script>
+  <script src="/static/js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="/static/js/custom.js"></script>
+</body>
+
+</html>

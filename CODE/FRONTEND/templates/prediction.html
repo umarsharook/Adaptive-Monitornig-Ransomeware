@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>rumor</title>
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+  <!-- fonts awesome style -->
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,500,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="/static/css/responsive.css" rel="stylesheet" />
+  <title>Form with Modal</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+      .container {
+      position: relative;
+      top: -400px; /* Adjust this value as needed but avoid large negative values */
+      margin-top: 50px;
+    }
+
+    .alert-custom {
+      color: #ffffff;
+      background-color: #f44336;
+      border-color: #f44336;
+      position: relative;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    .alert-custom strong {
+      font-size: 18px;
+    }
+    .highlight {
+      background-color: rgba(255, 255, 0, 0.3);
+      padding: 2px 5px;
+    }
+    </style>
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="contact_nav_container">
+        <div class="container">
+          <div class="contact_nav">
+            <a href="">
+              
+            </a>
+            <a href="">
+              
+            </a>
+            <a href="">
+              
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <div class="custom_menu-btn">
+            <button onclick="openNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+          </div>
+          <div id="myNav" class="overlay">
+            <div class="menu_btn-style ">
+              <button onclick="closeNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div class="overlay-content">
+              <a class="active" href="{{url_for('prediction')}}">PREDICTION</a>
+              <a class="" href="{{url_for('index')}}">LOGOUT</a>
+              
+            </div>
+          </div>
+          <a class="navbar-brand" href="index.html">
+            <span style="margin-right:500px;">
+              EVALUATION OF RESULTS
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </header>
+  </div>
+
+    <div class="container" >
+        <h2 class="text-center">IoT-ramsomware Prediction</h2>
+        <form action="{{ url_for('prediction') }}" method="post">
+          <!-- Display message -->
+                  {% if msg %}
+                  <div class="alert alert-custom" role="alert">
+                    <strong>Notice:</strong> <span class="highlight">{{ msg }}</span>
+                  </div>
+                  {% endif %}
+
+            <div class="form-group">
+                <label for="Unnamed">Unnamed: 0</label>
+                <input type="number" class="form-control" id="Unnamed" name="Unnamed: 0" required>
+            </div>
+            <div class="form-group">
+                <label for="id_orig_h">ID Origin H</label>
+                <input type="number" class="form-control" id="id_orig_h" name="id.orig_h" required>
+            </div>
+            <div class="form-group">
+                <label for="id_orig_p">ID Origin P</label>
+                <input type="number" class="form-control" id="id_orig_p" name="id.orig_p" required>
+            </div>
+            <div class="form-group">
+                <label for="id_resp_h">ID Resp H</label>
+                <input type="number" class="form-control" id="id_resp_h" name="id.resp_h" required>
+            </div>
+            <div class="form-group">
+                <label for="id_resp_p">ID Resp P</label>
+                <input type="number" class="form-control" id="id_resp_p" name="id.resp_p" required>
+            </div>
+            <div class="form-group">
+                <label for="proto">Proto</label>
+                <input type="number" class="form-control" id="proto" name="proto" required>
+            </div>
+            <div class="form-group">
+                <label for="service">Service</label>
+                <input type="number" class="form-control" id="service" name="service" required>
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration</label>
+                <input type="text" class="form-control" id="duration" name="duration" required>
+            </div>
+            <div class="form-group">
+                <label for="orig_bytes">Orig Bytes</label>
+                <input type="text" class="form-control" id="orig_bytes" name="orig_bytes" required>
+            </div>
+            <div class="form-group">
+                <label for="resp_bytes">Resp Bytes</label>
+                <input type="text" class="form-control" id="resp_bytes" name="resp_bytes" required>
+            </div>
+            <div class="form-group">
+                <label for="conn_state">Conn State</label>
+                <input type="number" class="form-control" id="conn_state" name="conn_state" required>
+            </div>
+            <div class="form-group">
+                <label for="missed_bytes">Missed Bytes</label>
+                <input type="number" class="form-control" id="missed_bytes" name="missed_bytes" required>
+            </div>
+            <div class="form-group">
+                <label for="history">History</label>
+                <input type="number" class="form-control" id="history" name="history" required>
+            </div>
+            <div class="form-group">
+                <label for="orig_pkts">Orig Pkts</label>
+                <input type="number" class="form-control" id="orig_pkts" name="orig_pkts" required>
+            </div>
+            <div class="form-group">
+                <label for="orig_ip_bytes">Orig IP Bytes</label>
+                <input type="number" class="form-control" id="orig_ip_bytes" name="orig_ip_bytes" required>
+            </div>
+            <div class="form-group">
+                <label for="resp_pkts">Resp Pkts</label>
+                <input type="number" class="form-control" id="resp_pkts" name="resp_pkts" required>
+            </div>
+            <div class="form-group">
+                <label for="resp_ip_bytes">Resp IP Bytes</label>
+                <input type="number" class="form-control" id="resp_ip_bytes" name="resp_ip_bytes" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+       
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+  <!-- info section -->
+  
+  <script src="/static/js/jquery-3.4.1.min.js"></script>
+  <script src="/static/js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="/static/js/custom.js"></script>
+</body>
+</html>
